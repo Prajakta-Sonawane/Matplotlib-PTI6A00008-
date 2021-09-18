@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
+#import numpy as np 
 
 def get_graph():
     buffer = BytesIO()
@@ -19,10 +20,37 @@ def get_plot(x,y):
     plt.switch_backend('AGG')
     plt.figure(figsize=(10,5))
     plt.title('sales of items')
-    plt.plot(x,y)
+    plt.plot(x,y,marker="o")
     plt.xticks(rotation=45)
     plt.xlabel('item')
     plt.ylabel('price')
     plt.tight_layout()
     graph = get_graph()
     return graph
+
+def Histogram(x):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10,5))
+    #x= np.random.randn(100,3)
+    plt.hist(x,30)                       #30 is the bins value(interval) 
+    plt.title('sales of items')
+    plt.xticks(rotation=45)
+    plt.xlabel('item')
+    plt.ylabel('price')
+    plt.tight_layout()
+    graph = get_graph()
+    return graph
+
+def bargraph(x,y):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10,5))
+    plt.bar(x,y)
+    plt.title('sales of items')
+    plt.xticks(rotation=45)
+    plt.xlabel('item')
+    plt.ylabel('price')
+    plt.tight_layout()
+    graph = get_graph()
+    return graph
+
+
