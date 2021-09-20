@@ -6,4 +6,6 @@ urlpatterns = [
         path('main_view', views.main_view, name='main_view'),
         path('hist_view', views.hist_view, name='hist_view'),
         path('bar_view', views.bar_view, name='bar_view'),
+        path('scatter_view', views.scatter_view, name='scatter_view'),
+        
 ]
