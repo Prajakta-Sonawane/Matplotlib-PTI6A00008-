@@ -28,14 +28,14 @@ def get_plot(x,y):
     graph = get_graph()
     return graph
 
-def Histogram(x):
+def Histogram(y):
     plt.switch_backend('AGG')
     plt.figure(figsize=(10,5))
     #x= np.random.randn(100,3)
-    plt.hist(x,30)                       #30 is the bins value(interval) 
+    plt.hist(y,bins=5,rwidth=0.95)                        
     plt.title('sales of items')
     plt.xticks(rotation=45)
-    plt.xlabel('item')
+    #plt.xlabel('item')
     plt.ylabel('price')
     plt.tight_layout()
     graph = get_graph()
@@ -53,4 +53,15 @@ def bargraph(x,y):
     graph = get_graph()
     return graph
 
-
+def Scatter(x,y):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10,5))
+    plt.title('sales of items')
+    plt.scatter(x,y,marker='v')
+    plt.xticks(rotation=45)
+    plt.xlabel('item')
+    plt.ylabel('price')
+    plt.tight_layout()
+    plt.legend(loc = 'upper left')
+    graph = get_graph()
+    return graph
